@@ -4,13 +4,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        nxBlack: "#000000",
-        nxGrayDark: "#333333",
-        nxGray: "#666666",
-        nxGrayLight: "#CCCCCC",
-        pastelBlue: "#AEC6CF",
-        pastelGreen: "#C1E1C1",
-        pastelPink: "#FFD1DC",
+        bg: "var(--color-bg)",
+        text: {
+          primary: "var(--color-text-primary)",
+          grayDark: "var(--color-gray-dark)",
+          gray: "var(--color-gray)",
+        },
+        gray: {
+          light: "var(--color-gray-light)",
+        },
+        accent: "var(--color-accent)",
       },
     },
   },

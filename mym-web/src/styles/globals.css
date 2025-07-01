@@ -1,3 +1,18 @@
+:root {
+  /* Paleta base */
+  --color-bg: #ffffff;
+  --color-text-primary: #000000;
+  --color-gray-dark: #4d4d4d;
+  --color-gray: #999999;
+  --color-gray-light: #e6e6e6;
+
+  /* Acento (elige uno) */
+/* Uncomment la opción que uses: */
+  --color-accent: #a3c4f3; /* azul pastel */
+/* --color-accent: #ffd8b0;  melocotón pastel */
+/* --color-accent: #a6e3e9;  verde menta pastel */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
