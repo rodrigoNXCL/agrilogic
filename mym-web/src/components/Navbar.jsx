@@ -7,7 +7,7 @@ export default function Navbar() {
       <img
         src="/logobase_mym_sf.png"
         alt="Logo M y M Asesorías"
-        className="h-12 w-auto"
+        className="h-20 w-auto"
       />
     </nav>
   );
