@@ -1,42 +1,40 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
-  const menuItems = [
+  const menu = [
     { to: "/",          label: "Inicio" },
     { to: "/servicios", label: "Servicios" },
     { to: "/contacto",  label: "Contacto" },
     { to: "/clientes",  label: "Clientes" },
   ];
 
-  // Siempre fondo gris oscuro para visibilidad
   return (
-    <nav className="fixed w-full top-0 left-0 z-50 bg-grayDark shadow-md">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo solo en interior */}
+    <nav className="fixed w-full top-0 bg-navBg shadow-md z-50">
+      <div className="container mx-auto flex items-center justify-between px-6 py-2">
+        {/* Logo solo en páginas internas */}
         {pathname !== "/" && (
-          <Link to="/">
+          <Link to="/" className="hidden lg:block">
             <img
-              src="/logobase_mym_sf.png"
+              src="/logo-transparent.png"
               alt="Logo M y M Asesorías"
-              className="h-16 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
         )}
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex space-x-8">
-          {menuItems.map(({ to, label }) => (
+        {/* Menú desktop */}
+        <div className="hidden md:flex space-x-10 uppercase tracking-wide text-white">
+          {menu.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               end
               className={({ isActive }) =>
-                `uppercase tracking-wide text-white transition ${
+                `py-2 transition ${
                   isActive
                     ? "border-b-2 border-accent font-semibold"
                     : "hover:text-accent"
@@ -48,30 +46,28 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile toggle */}
+        {/* Toggle móvil */}
         <button
-          className="md:hidden text-white"
-          onClick={() => setOpen((o) => !o)}
+          onClick={() => setOpen(o => !o)}
+          className="md:hidden text-white text-2xl"
           aria-label="Toggle menu"
         >
-          {open ? <X size={24}/> : <Menu size={24}/>}
+          {open ? "✕" : "☰"}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Menú móvil */}
       {open && (
-        <div className="md:hidden bg-grayDark">
-          {menuItems.map(({ to, label }) => (
+        <div className="md:hidden bg-navBg">
+          {menu.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               end
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `block px-6 py-3 text-white transition ${
-                  isActive
-                    ? "bg-grayDark/80 font-semibold"
-                    : "hover:bg-grayDark/60"
+                `block px-6 py-2 text-white transition ${
+                  isActive ? "bg-navBg/80 font-semibold" : "hover:bg-navBg/60"
                 }`
               }
             >
