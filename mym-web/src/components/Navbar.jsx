@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,27 +13,21 @@ export default function Navbar() {
 
   return (
     <nav className="fixed w-full top-0 bg-headerFooterBg shadow-sm z-50">
-      <div className="container mx-auto flex items-center justify-between px-6 py-3">
-        {/* Logo interior */}
-        <Link to="/" className="hidden lg:block">
-          <img
-            src="/logo-transparent.png"
-            alt="Logo M y M Asesorías"
-            className="h-20 w-auto"
-          />
-        </Link>
+      <div className="container mx-auto flex items-center justify-between px-6 py-2">
+        {/* Espacio izquierdo vacío (podrías colocar logo aquí en interior) */}
+        <div className="w-1/4"></div>
 
-        {/* Menú desktop */}
-        <div className="hidden md:flex space-x-10 uppercase tracking-wide text-textPrimary">
+        {/* Menú desktop en la derecha */}
+        <div className="hidden md:flex w-3/4 justify-end space-x-8 uppercase tracking-wide text-white">
           {menu.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               end
               className={({ isActive }) =>
-                `py-2 transition ${
+                `py-1 transition ${
                   isActive
-                    ? "border-b-2 border-accent font-semibold text-textPrimary"
+                    ? "border-b-2 border-accent font-semibold"
                     : "hover:text-accent"
                 }`
               }
@@ -43,10 +37,10 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Toggle móvil */}
+        {/* Toggle móvil a la derecha */}
         <button
+          className="md:hidden text-white text-2xl ml-auto"
           onClick={() => setOpen(o => !o)}
-          className="md:hidden text-textPrimary text-2xl"
           aria-label="Toggle menu"
         >
           {open ? "✕" : "☰"}
@@ -63,7 +57,7 @@ export default function Navbar() {
               end
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `block px-6 py-3 text-textPrimary transition ${
+                `block px-6 py-3 text-white transition ${
                   isActive
                     ? "bg-headerFooterBg/80 font-semibold"
                     : "hover:bg-headerFooterBg/60"

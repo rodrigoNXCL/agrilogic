@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         background: "#F5F5F5",
         contentBg: "#FFFFFF",
-        headerFooterBg: "#E6E6E6",  // nuevo gris pálido
+        headerFooterBg: "#b5b5b5",  // gris medio, más elegante
         accent: "#A3C4F3",
         textPrimary: "#333333",
         textSecondary: "#4D4D4D",
