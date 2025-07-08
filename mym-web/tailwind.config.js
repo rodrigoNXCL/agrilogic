@@ -4,16 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: "var(--color-bg)",
-        text: {
-          primary: "var(--color-text-primary)",
-          grayDark: "var(--color-gray-dark)",
-          gray: "var(--color-gray)",
-        },
-        gray: {
-          light: "var(--color-gray-light)",
-        },
-        accent: "var(--color-accent)",
+        background: "#F5F5F5",
+        contentBg: "#FFFFFF",
+        headerFooterBg: "#E6E6E6",  // nuevo gris pálido
+        accent: "#A3C4F3",
+        textPrimary: "#333333",
+        textSecondary: "#4D4D4D",
+        borderLight: "#DDDDDD",
       },
     },
   },
