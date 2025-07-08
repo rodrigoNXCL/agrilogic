@@ -9,6 +9,8 @@ import Home     from "./Home";
 import Services from "./Services";
 import Contact  from "./Contact";
 import Clients  from "./Clients";
+import Footer   from "../components/Footer";
+import About    from "./About";
 
 export default function App() {
   return (
@@ -20,9 +22,11 @@ export default function App() {
           <Route path="/servicios"  element={<Services />} />
           <Route path="/contacto"   element={<Contact />} />
           <Route path="/clientes"   element={<Clients />} />
+          <Route path="/quienes-somos" element={<About />} />
           <Route path="*"           element={<Navigate to="/" replace />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }

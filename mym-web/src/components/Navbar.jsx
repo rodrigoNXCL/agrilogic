@@ -6,9 +6,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const menu = [
     { to: "/",          label: "Inicio" },
+    { to: "/quienes-somos",  label: "Quiénes Somos" },
     { to: "/servicios", label: "Servicios" },
     { to: "/contacto",  label: "Contacto" },
     { to: "/clientes",  label: "Clientes" },
+    
   ];
 
   return (
