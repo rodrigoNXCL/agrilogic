@@ -6,7 +6,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const menu = [
     { to: "/",          label: "Inicio" },
-    { to: "/quienes-somos",  label: "Quiénes Somos" },
+    { to: "/quienes-somos",  label: "Nosotros" },
     { to: "/servicios", label: "Servicios" },
     { to: "/contacto",  label: "Contacto" },
     { to: "/clientes",  label: "Clientes" },
@@ -14,7 +14,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full top-0 bg-headerFooterBg shadow-sm z-50">
+    <nav className="fixed w-full top-0 bg-headerFooterBg shadow-sm z-50 backdrop-blur-sm">
       <div className="container mx-auto flex items-center justify-between px-6 py-2">
         {/* Espacio izquierdo vacío (podrías colocar logo aquí en interior) */}
         <div className="w-1/4"></div>
